@@ -78,6 +78,11 @@ h3 {
     height: 16px;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text-mid);
+}
+
 .split {
     display: flex;
     flex: 1;

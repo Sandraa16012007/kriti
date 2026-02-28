@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriti - Your Garden</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="garden.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav fade-up">
+        <a href="index.html" class="nav-brand">
+            <span
+                style="display:inline-flex;align-items:center;justify-content:center;background:var(--sage);border-radius:50%;width:24px;height:24px;margin-right:6px;vertical-align:middle;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path
+                        d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                </svg>
+            </span>
+            Kriti
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="garden.html" class="active">Garden</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="nav-actions" style="display:flex;align-items:center;gap:20px;">
+            <a href="profile.html" aria-label="Profile" style="color:var(--text-mid);"><i data-lucide="user"></i></a>
+            <a href="auth.html" class="nav-logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="page-wrap">
+        <!-- Background Mandalas -->
+        <img src="assets/mandala_pattern.png" class="m-tl" alt="">
+        <img src="assets/mandala_pattern.png" class="m-br" alt="">
+
+        <!-- Page Header -->
+        <header class="garden-page-header fade-up">
+            <h1 class="page-title"><i data-lucide="flower-2" class="title-ico"></i> Your Growth Garden</h1>
+            <p class="page-subtitle">Every day you show up, something grows here.</p>
+        </header>
+
+        <div class="garden-layout">
+
+            <!-- ===== LEFT: Main Garden View ===== -->
+            <div class="garden-main fade-up" style="animation-delay: 0.1s;">
+                <div class="card garden-view-card">
+                    <div class="garden-view-header">
+                        <h2 class="card-title"><i data-lucide="trees" class="title-ico"></i> My Garden</h2>
+                        <div class="garden-toggles">
+                            <button class="g-toggle active" data-range="today">Today</button>
+                            <button class="g-toggle" data-range="yesterday">Yesterday</button>
+                            <button class="g-toggle" data-range="week">Last Week</button>
+                            <button class="g-toggle" data-range="month">Last Month</button>
+                        </div>
+                    </div>
+
+                    <div class="garden-illustration-wrap">
+                        <img src="assets/garden_today.png" id="garden-illustration" alt="Your Garden"
+                            class="garden-illustration" />
+                        <!-- Symbolism Hotspots -->
+                        <div class="hotspot tooltip-below" style="top:5%; left:20%; width:40%; height:45%;"
+                            data-symbol="🌳 Banyan Tree — Career" data-meaning="Karma, longevity, responsibility"></div>
+                        <div class="hotspot" style="bottom:15%; left:8%; width:25%; height:30%;"
+                            data-symbol="🪷 Lotus Pond — Mind" data-meaning="Clarity, resilience, inner peace"></div>
+                        <div class="hotspot" style="bottom:10%; right:8%; width:22%; height:28%;"
+                            data-symbol="🌿 Tulsi Plant — Health" data-meaning="Healing, vitality, daily care"></div>
+                        <div class="hotspot" style="bottom:25%; left:38%; width:18%; height:22%;"
+                            data-symbol="🪔 Courtyard Lamp — Family" data-meaning="Warmth, togetherness, guiding light">
+                        </div>
+                        <!-- Overlay for purchased items -->
+                        <div class="garden-overlays" id="garden-overlays"></div>
+                    </div>
+
+                    <div class="garden-stats">
+                        <div class="stat-pill">
+                            <i data-lucide="flame" style="width:14px;height:14px;color:var(--peach);"></i>
+                            <span>7 Day Streak</span>
+                        </div>
+                        <div class="stat-pill">
+                            <i data-lucide="star" style="width:14px;height:14px;color:var(--gold);"></i>
+                            <span id="cp-balance">120 Consistency Points</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== RIGHT: Sidebar ===== -->
+            <div class="garden-sidebar">
+
+
+                <!-- Garden Shop -->
+                <div class="card shop-card fade-up" style="animation-delay: 0.3s;">
+                    <h2 class="card-title" style="font-size:1.3rem;"><i data-lucide="store" class="title-ico"></i>
+                        Garden Shop</h2>
+                    <p class="shop-subtitle">Spend your consistency points to beautify your garden.</p>
+
+                    <div class="shop-grid">
+                        <div class="shop-item" data-item="sparrow" data-cost="20">
+                            <div class="shop-icon">🐦</div>
+                            <span class="shop-name">Sparrow</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 20</span>
+                            <button class="shop-buy-btn" onclick="buyItem('sparrow', 20, this)">Add</button>
+                        </div>
+                        <div class="shop-item" data-item="peacock" data-cost="50">
+                            <div class="shop-icon">🦚</div>
+                            <span class="shop-name">Peacock</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 50</span>
+                            <button class="shop-buy-btn" onclick="buyItem('peacock', 50, this)">Add</button>
+                        </div>
+                        <div class="shop-item" data-item="jasmine" data-cost="15">
+                            <div class="shop-icon">🌼</div>
+                            <span class="shop-name">Jasmine</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 15</span>
+                            <button class="shop-buy-btn" onclick="buyItem('jasmine', 15, this)">Add</button>
+                        </div>
+                        <div class="shop-item" data-item="butterfly" data-cost="10">
+                            <div class="shop-icon">🦋</div>
+                            <span class="shop-name">Butterfly</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 10</span>
+                            <button class="shop-buy-btn" onclick="buyItem('butterfly', 10, this)">Add</button>
+                        </div>
+                        <div class="shop-item" data-item="marigold" data-cost="12">
+                            <div class="shop-icon">🌻</div>
+                            <span class="shop-name">Marigold</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 12</span>
+                            <button class="shop-buy-btn" onclick="buyItem('marigold', 12, this)">Add</button>
+                        </div>
+                        <div class="shop-item" data-item="lantern" data-cost="30">
+                            <div class="shop-icon">🏮</div>
+                            <span class="shop-name">Lantern</span>
+                            <span class="shop-cost"><i data-lucide="star"
+                                    style="width:12px;height:12px;color:var(--gold);"></i> 30</span>
+                            <button class="shop-buy-btn" onclick="buyItem('lantern', 30, this)">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Purchase Toast -->
+    <div class="purchase-toast hidden" id="purchase-toast">
+        <i data-lucide="check-circle" style="width:18px;height:18px;color:var(--sage-deep);"></i>
+        <span id="toast-message">Item added to your garden!</span>
+    </div>
+
+    <script src="garden.js"></script>
+</body>
+
+</html>
