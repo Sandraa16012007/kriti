@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriti — Replacing Comparison with Alignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ═══ MANDALA FIXED OVERLAY ═══ -->
+    <div class="mandala-wrap" aria-hidden="true">
+        <div class="mandala mandala-tl">
+            <svg width="380" height="380" viewBox="0 0 380 380">
+                <g transform="translate(190,190)">
+                    <circle r="175" fill="none" stroke="var(--gold)" stroke-width="0.7" />
+                    <circle r="150" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <circle r="120" fill="none" stroke="var(--gold)" stroke-width="0.7" />
+                    <circle r="90" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <circle r="60" fill="none" stroke="var(--gold)" stroke-width="0.7" />
+                    <circle r="30" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <g class="mandala-spin">
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6" />
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6"
+                            transform="rotate(30)" />
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6"
+                            transform="rotate(60)" />
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6"
+                            transform="rotate(90)" />
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6"
+                            transform="rotate(120)" />
+                        <ellipse rx="14" ry="55" fill="none" stroke="var(--gold)" stroke-width="0.6"
+                            transform="rotate(150)" />
+                    </g>
+                    <g>
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(15) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(60) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(105) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(150) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(195) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(240) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(285) translate(0,-75)" />
+                        <ellipse rx="7" ry="25" fill="none" stroke="var(--sage)" stroke-width="0.5"
+                            transform="rotate(330) translate(0,-75)" />
+                    </g>
+                    <circle r="4" fill="var(--gold)" opacity="0.5" />
+                </g>
+            </svg>
+        </div>
+        <div class="mandala mandala-tr">
+            <svg width="380" height="380" viewBox="0 0 380 380">
+                <g transform="translate(190,190)">
+                    <circle r="175" fill="none" stroke="var(--gold)" stroke-width="0.7" />
+                    <circle r="130" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <circle r="85" fill="none" stroke="var(--gold)" stroke-width="0.7" />
+                    <circle r="45" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <ellipse rx="12" ry="45" fill="none" stroke="var(--gold)" stroke-width="0.6" class="mandala-spin" />
+                    <ellipse rx="12" ry="45" fill="none" stroke="var(--gold)" stroke-width="0.6" transform="rotate(45)"
+                        class="mandala-spin" />
+                    <ellipse rx="12" ry="45" fill="none" stroke="var(--gold)" stroke-width="0.6" transform="rotate(90)"
+                        class="mandala-spin" />
+                    <ellipse rx="12" ry="45" fill="none" stroke="var(--gold)" stroke-width="0.6" transform="rotate(135)"
+                        class="mandala-spin" />
+                </g>
+            </svg>
+        </div>
+        <div class="mandala mandala-bl">
+            <svg width="320" height="320" viewBox="0 0 320 320">
+                <g transform="translate(160,160)">
+                    <circle r="150" fill="none" stroke="var(--sage)" stroke-width="0.6" />
+                    <circle r="110" fill="none" stroke="var(--gold)" stroke-width="0.5" />
+                    <circle r="70" fill="none" stroke="var(--sage)" stroke-width="0.6" />
+                    <circle r="30" fill="none" stroke="var(--gold)" stroke-width="0.5" />
+                    <g class="mandala-spin">
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(45)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(90)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(135)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(180)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(225)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(270)" />
+                        <ellipse rx="10" ry="40" fill="none" stroke="var(--sage)" stroke-width="0.6"
+                            transform="rotate(315)" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="mandala mandala-br">
+            <svg width="300" height="300" viewBox="0 0 300 300">
+                <g transform="translate(150,150)">
+                    <circle r="140" fill="none" stroke="var(--gold)" stroke-width="0.6" />
+                    <circle r="100" fill="none" stroke="var(--sage)" stroke-width="0.5" />
+                    <circle r="60" fill="none" stroke="var(--gold)" stroke-width="0.6" />
+                    <ellipse rx="10" ry="38" fill="none" stroke="var(--gold)" stroke-width="0.5" class="mandala-spin" />
+                    <ellipse rx="10" ry="38" fill="none" stroke="var(--gold)" stroke-width="0.5" transform="rotate(60)"
+                        class="mandala-spin" />
+                    <ellipse rx="10" ry="38" fill="none" stroke="var(--gold)" stroke-width="0.5" transform="rotate(120)"
+                        class="mandala-spin" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ═══ NAV ═══ -->
+    <nav id="navbar">
+        <a href="#" class="nav-brand">
+            <span class="nav-brand-dot">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path
+                        d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                </svg>
+            </span>
+            Kriti
+        </a>
+        <ul class="nav-links">
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="location.href='auth.html'">Get
+            Started</button>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Ancient Wisdom · Modern AI
+            </div>
+
+            <h1>Track your growth without<br><em>comparing yourself</em> to others.</h1>
+
+            <p class="hero-sub">
+                Kriti is a conversational AI that listens to your daily efforts, classifies them across life areas like
+                career, health, family, and mind — and turns them into a living Indian garden that grows with you.
+            </p>
+
+            <p class="hero-note">
+                No leaderboards <span>·</span> No streak pressure <span>·</span> Only you — today vs you — yesterday
+            </p>
+
+            <div class="hero-actions">
+                <button class="btn btn-green" onclick="location.href='auth.html'">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                    </svg>
+                    Start Your Garden
+                </button>
+                <button class="btn btn-peach">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- HERO GARDEN SCENE IMAGE -->
+        <div class="garden-scene">
+            <img src="assets/garden_hero.png" alt="Premium Garden Illustration"
+                style="width:100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(107, 78, 46, 0.12);">
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+                <circle cx="5" cy="5" r="3" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.4" />
+                <circle cx="5" cy="5" r="1" fill="var(--gold)" opacity="0.4" />
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1"
+                opacity="0.45">
+                <path
+                    d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.2 3.5 6 3 7.5C2.5 9 3 10.5 4 11.5C3.5 12.5 3.5 13.8 4.5 14.8C5.5 15.8 7 16 8.5 15.5C9.5 17 11 18 12 18C13 18 14.5 17 15.5 15.5C17 16 18.5 15.8 19.5 14.8C20.5 13.8 20.5 12.5 20 11.5C21 10.5 21.5 9 21 7.5C20.5 6 19 5.2 17.5 5.5C16.5 3.5 14.5 2 12 2Z" />
+            </svg>
+            <svg width="10" height="10" viewBox="0 0 10 10">
+                <circle cx="5" cy="5" r="3" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.4" />
+                <circle cx="5" cy="5" r="1" fill="var(--gold)" opacity="0.4" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ PROBLEM SECTION ═══ -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <div class="text-center">
+                <div class="sec-label reveal">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                    The Reality
+                </div>
+                <h2 class="sec-title reveal">In India, life feels like a leaderboard.</h2>
+                <p class="sec-sub reveal">The pressure is constant. The measuring never stops. And the cost is invisible
+                    — until it isn't.</p>
+            </div>
+
+            <div class="problem-cards">
+                <div class="problem-card reveal reveal-d1">
+                    <div class="problem-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m3 16 4-4 4 4 4-4 4 4"></path>
+                            <path d="M18 20V10"></path>
+                            <path d="M12 20V4"></path>
+                            <path d="M6 20v-6"></path>
+                        </svg>
+                    </div>
+                    <h3>Constant Comparison</h3>
+                    <p>Marks. Placements. Packages. Rank lists. Every milestone you reach becomes someone else's
+                        starting line. The measuring never ends.</p>
+                </div>
+                <div class="problem-card reveal reveal-d2">
+                    <div class="problem-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Effort is Invisible</h3>
+                    <p>Outcomes are loud. Effort is silent. The hours of showing up, the courage to try again — they
+                        vanish, uncounted and unseen.</p>
+                </div>
+                <div class="problem-card reveal reveal-d3">
+                    <div class="problem-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h5"></path>
+                            <path d="M17 12h5"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="m5 12 2-2 3 3 3-3 3 3 3-3 2 2"></path>
+                        </svg>
+                    </div>
+                    <h3>Rest Feels Like Falling</h3>
+                    <p>Stillness is misread as stagnation. Taking a breath becomes a source of guilt. You can never just
+                        be.</p>
+                </div>
+            </div>
+
+            <p class="problem-closing reveal">
+                The problem isn't ambition.<br>
+                It's <em>constant comparison</em>.
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+                <rect x="1" y="1" width="6" height="6" fill="none" stroke="rgba(196,149,74,0.4)" stroke-width="1" />
+            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(196,149,74,0.4)">
+                <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="8" height="8" viewBox="0 0 8 8">
+                <rect x="1" y="1" width="6" height="6" fill="none" stroke="rgba(196,149,74,0.4)" stroke-width="1" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ SOLUTION SECTION ═══ -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <div class="sec-label reveal">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                        </svg>
+                        Our Approach
+                    </div>
+                    <h2 class="sec-title reveal" style="text-align:left;margin-bottom:1.4rem;">A healthier way to
+                        measure progress.</h2>
+                    <p class="reveal" style="text-align:left;margin-bottom:0;">Kriti asks what matters most to you. You
+                        share small daily updates — in your own words, your own language.</p>
+
+                    <div class="convo-bubble reveal reveal-d1">"Aaj DSA 1 ghanta kiya."</div>
+                    <div class="convo-bubble reveal reveal-d2">"Aaj ghar pe baat nahi ho paayi."</div>
+
+                    <p class="reveal reveal-d3" style="text-align:left;">Our AI understands which life area it belongs
+                        to, whether it was effort, rest, or burnout — and how it compares to your own past patterns. Not
+                        the world's. Yours.</p>
+
+                    <div class="solution-tags reveal reveal-d4">
+                        <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                            </svg> Domain classification</span>
+                        <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                            </svg> Effort intensity</span>
+                        <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                            </svg> Burnout detection</span>
+                        <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                            </svg> Self-comparison only</span>
+                        <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                            </svg> No scores. No shame.</span>
+                    </div>
+                </div>
+
+                <div class="garden-orb reveal reveal-d2">
+                    <div class="garden-orb-glow"></div>
+                    <!-- Animated mini garden SVG -->
+                    <svg width="240" height="260" viewBox="0 0 240 260" style="position:relative;z-index:1;">
+                        <defs>
+                            <radialGradient id="miniGlow" cx="50%" cy="60%">
+                                <stop offset="0%" stop-color="rgba(196,149,74,0.15)" />
+                                <stop offset="100%" stop-color="rgba(196,149,74,0)" />
+                            </radialGradient>
+                        </defs>
+                        <!-- Ground circle -->
+                        <circle cx="120" cy="200" r="100" fill="url(#miniGlow)" />
+                        <!-- Mini banyan -->
+                        <g class="svg-float" transform="translate(120,215)">
+                            <path d="M-6,0 v-70 q0,-10 10,-10 t10,10 v70" fill="var(--brown)" opacity="0.4" />
+                            <ellipse cx="0" cy="-85" rx="70" ry="40" fill="var(--sage)" opacity="0.4" />
+                            <ellipse cx="-40" cy="-65" rx="50" ry="30" fill="var(--sage)" opacity="0.3" />
+                            <ellipse cx="40" cy="-65" rx="50" ry="30" fill="var(--sage)" opacity="0.3" />
+                        </g>
+                        <!-- Mini lotus -->
+                        <g class="svg-float-2" transform="translate(60,210)">
+                            <ellipse cx="0" cy="5" rx="20" ry="8" fill="var(--sage-light)" opacity="0.5" />
+                            <path d="M-10,0 q-5,-15 0,-20 q5,15 0,20 Z" fill="var(--peach)" opacity="0.7"
+                                transform="rotate(-30)" />
+                            <path d="M10,0 q5,-15 0,-20 q-5,15 0,20 Z" fill="var(--peach)" opacity="0.7"
+                                transform="rotate(30)" />
+                            <path d="M0,-5 q0,-18 0,-22 q0,18 0,22 Z" stroke="var(--peach)" stroke-width="8"
+                                stroke-linecap="round" opacity="0.8" />
+                        </g>
+                        <!-- Mini diya -->
+                        <g class="diya-glow" transform="translate(180,210)">
+                            <path d="M-15,0 q0,10 15,10 t15,-10 q-5,-5 -15,-5 t-15,5 Z" fill="var(--gold)"
+                                opacity="0.6" />
+                            <circle cx="0" cy="-12" r="6" fill="var(--accent-gold)" opacity="0.8">
+                                <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                        <!-- Decorative ring -->
+                        <circle cx="120" cy="200" r="90" fill="none" stroke="rgba(196,149,74,0.12)" stroke-width="1"
+                            stroke-dasharray="6 8" />
+                        <circle cx="120" cy="200" r="68" fill="none" stroke="rgba(122,170,136,0.12)" stroke-width="1"
+                            stroke-dasharray="4 10" />
+                    </svg>
+                    <p
+                        style="font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;color:var(--ink-soft);text-align:center;position:relative;z-index:1;">
+                        Your living Indian garden — <br>growing one honest day at a time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="28" height="20" viewBox="0 0 40 24" fill="none" stroke="rgba(196,149,74,0.45)"
+                stroke-width="1.2">
+                <path d="M4 12 Q10 4 20 12 Q30 20 36 12" />
+                <path d="M4 12 Q10 20 20 12 Q30 4 36 12" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <div class="text-center">
+                <div class="sec-label reveal">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    The Journey
+                </div>
+                <h2 class="sec-title reveal">How Kriti Works</h2>
+                <p class="sec-sub reveal">Four gentle steps toward alignment</p>
+            </div>
+
+            <div class="steps-row">
+                <div class="step reveal reveal-d1">
+                    <div class="step-bubble step-bubble-1">I</div>
+                    <div class="step-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage)"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            <line x1="8" y1="9" x2="16" y2="9"></line>
+                            <line x1="8" y1="13" x2="14" y2="13"></line>
+                        </svg>
+                    </div>
+                    <h3>Conversational Onboarding</h3>
+                    <p>We ask: <em style="font-style:italic;color:var(--ink-soft);">"What's taking most of your energy
+                            right now?"</em> Career, studies, family, health, or inner peace.</p>
+                </div>
+                <div class="step reveal reveal-d2">
+                    <div class="step-bubble step-bubble-2">II</div>
+                    <div class="step-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--peach)"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </div>
+                    <h3>Daily Check-In</h3>
+                    <p>Speak or type naturally. No forms. No metrics. Just honest words about your day, however small.
+                    </p>
+                </div>
+                <div class="step reveal reveal-d3">
+                    <div class="step-bubble step-bubble-3">III</div>
+                    <div class="step-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a08ec8" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>AI Classification</h3>
+                    <p>Kriti detects your life domain and effort intensity, then compares it gently to <em
+                            style="font-style:italic;">your own</em> past patterns — never anyone else's.</p>
+                </div>
+                <div class="step reveal reveal-d4">
+                    <div class="step-bubble step-bubble-4">IV</div>
+                    <div class="step-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4 2 4h-2a10 10 0 0 0-11 13a4.5 4.5 0 0 1-3.5 1h-1">
+                            </path>
+                            <path d="M11 20a2 2 0 1 0 4 0a2 2 0 1 0-4 0"></path>
+                        </svg>
+                    </div>
+                    <h3>Garden Growth</h3>
+                    <p>Your garden reflects you — not a score. Neutral days bring stillness. Struggle dims gently. No
+                        dramatic decay.</p>
+                </div>
+            </div>
+
+            <div class="garden-map">
+                <div class="gmap-item gmap-item-1 reveal reveal-d1">
+                    <div class="gmap-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sage)"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 10l-2 2"></path>
+                            <path d="M14 6l-3 3"></path>
+                            <path d="M18 12l-6-6"></path>
+                            <path d="M14 22a7 7 0 1 1-4-13.2"></path>
+                            <path d="M14 22a7 7 0 1 0 4-13.2"></path>
+                        </svg>
+                    </div>
+                    <div class="gmap-text">
+                        <h4>Career → Banyan grows</h4>
+                        <p>Roots deepen, canopy expands</p>
+                    </div>
+                </div>
+                <div class="gmap-item gmap-item-2 reveal reveal-d2">
+                    <div class="gmap-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-peach)"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 10V2"></path>
+                            <path d="M5 10a7 7 0 0 1 14 0c0 4-3.5 7-7 12-3.5-5-7-8-7-12z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="gmap-text">
+                        <h4>Mind → Lotus opens</h4>
+                        <p>Petals unfurl with each reflection</p>
+                    </div>
+                </div>
+                <div class="gmap-item gmap-item-3 reveal reveal-d3">
+                    <div class="gmap-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a08ec8" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="gmap-text">
+                        <h4>Health → Tulsi brightens</h4>
+                        <p>Vitality blooms, green deepens</p>
+                    </div>
+                </div>
+                <div class="gmap-item gmap-item-4 reveal reveal-d4">
+                    <div class="gmap-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="gmap-text">
+                        <h4>Family → Diya glows</h4>
+                        <p>Warmth flickers with connection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="30" height="14" viewBox="0 0 40 16" fill="none" stroke="rgba(196,149,74,0.4)" stroke-width="1">
+                <path d="M0,8 L8,2 L20,8 L32,2 L40,8" />
+                <path d="M0,8 L8,14 L20,8 L32,14 L40,8" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ PHILOSOPHY ═══ -->
+    <section class="philosophy-section" id="philosophy">
+        <div class="container">
+            <div class="text-center" style="margin-bottom:3rem;">
+                <div class="sec-label reveal">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    Heritage
+                </div>
+            </div>
+            <div class="parchment reveal">
+                <div class="parchment-inner-border"></div>
+
+                <!-- Corner ornaments -->
+                <svg class="parchment-corner pc-tl" viewBox="0 0 60 60">
+                    <path d="M4,56 L4,4 L56,4" fill="none" stroke="rgba(196,149,74,0.5)" stroke-width="1.2" />
+                    <path d="M10,50 L10,10 L50,10" fill="none" stroke="rgba(196,149,74,0.3)" stroke-width="0.8" />
+                    <circle cx="4" cy="4" r="3" fill="rgba(196,149,74,0.4)" />
+                    <ellipse cx="30" cy="4" rx="6" ry="3" fill="none" stroke="rgba(196,149,74,0.35)"
+                        stroke-width="0.8" />
+                    <ellipse cx="4" cy="30" rx="3" ry="6" fill="none" stroke="rgba(196,149,74,0.35)"
+                        stroke-width="0.8" />
+                </svg>
+                <svg class="parchment-corner pc-tr" viewBox="0 0 60 60">
+                    <path d="M4,56 L4,4 L56,4" fill="none" stroke="rgba(196,149,74,0.5)" stroke-width="1.2" />
+                    <path d="M10,50 L10,10 L50,10" fill="none" stroke="rgba(196,149,74,0.3)" stroke-width="0.8" />
+                    <circle cx="4" cy="4" r="3" fill="rgba(196,149,74,0.4)" />
+                </svg>
+                <svg class="parchment-corner pc-bl" viewBox="0 0 60 60">
+                    <path d="M4,56 L4,4 L56,4" fill="none" stroke="rgba(196,149,74,0.5)" stroke-width="1.2" />
+                    <circle cx="4" cy="4" r="3" fill="rgba(196,149,74,0.4)" />
+                </svg>
+                <svg class="parchment-corner pc-br" viewBox="0 0 60 60">
+                    <path d="M4,56 L4,4 L56,4" fill="none" stroke="rgba(196,149,74,0.5)" stroke-width="1.2" />
+                    <circle cx="4" cy="4" r="3" fill="rgba(196,149,74,0.4)" />
+                </svg>
+
+                <!-- Mandala medallion -->
+                <svg width="72" height="72" viewBox="0 0 72 72"
+                    style="margin:0 auto 1.8rem;display:block;opacity:0.45;">
+                    <g transform="translate(36,36)">
+                        <circle r="34" fill="none" stroke="var(--accent-gold)" stroke-width="0.8" />
+                        <circle r="24" fill="none" stroke="var(--sage)" stroke-width="0.6" />
+                        <circle r="14" fill="none" stroke="var(--accent-gold)" stroke-width="0.8" />
+                        <circle r="5" fill="none" stroke="var(--sage)" stroke-width="0.6" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6"
+                            transform="rotate(30)" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6"
+                            transform="rotate(60)" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6"
+                            transform="rotate(90)" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6"
+                            transform="rotate(120)" />
+                        <ellipse rx="5" ry="20" fill="none" stroke="var(--accent-gold)" stroke-width="0.6"
+                            transform="rotate(150)" />
+                        <circle r="2.5" fill="var(--accent-gold)" opacity="0.6" />
+                    </g>
+                </svg>
+
+                <h2>Rooted in Indian wisdom.</h2>
+                <p>Ancient Indian philosophy teaches: focus on action. Release attachment to outcome. This is not a
+                    fortune-cookie sentiment — it is a complete system of living.</p>
+                <p>Kriti brings this principle into daily life — not as quotes on a wall, but as product behavior. The
+                    app witnesses your effort. It does not reward outcomes. It holds your journey without judging the
+                    destination.</p>
+                <div class="phil-quote">"Effort over outcome."</div>
+                <p class="sanskrit">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ·· Karmanye vadhikaraste…</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(196,149,74,0.45)"
+                stroke-width="1.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ SUPPORT ═══ -->
+    <section class="support-section" id="support">
+        <div class="container">
+            <div class="support-grid">
+                <div class="support-text">
+                    <div class="sec-label reveal">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg>
+                        Care
+                    </div>
+                    <h2 class="reveal">Growth without pressure.</h2>
+                    <p class="reveal">Kriti watches over you gently. If it detects consecutive low-energy days, it
+                        doesn't push you harder — it offers small, human suggestions.</p>
+                    <p class="reveal">If deeper distress patterns emerge, Kriti quietly offers optional professional
+                        support resources. No force. No algorithms optimizing for engagement. No judgment.</p>
+                    <p class="reveal"
+                        style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--ink-soft);">
+                        "You are seen, even on your quiet days."</p>
+                </div>
+
+                <div class="support-panel reveal reveal-d2">
+                    <div class="support-panel-head">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                        </svg>
+                        Gentle nudges from Kriti
+                    </div>
+                    <div class="nudge">
+                        <div class="nudge-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        Take a 5-minute walk outside
+                    </div>
+                    <div class="nudge">
+                        <div class="nudge-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        Call one friend you haven't spoken to in a while
+                    </div>
+                    <div class="nudge">
+                        <div class="nudge-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round">
+                                <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4L18.5 2.5z" />
+                            </svg>
+                        </div>
+                        Write three honest lines about how you feel
+                    </div>
+                    <div class="nudge">
+                        <div class="nudge-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round">
+                                <path d="M18.364 5.636a9 9 0 010 12.728M15.536 8.464a5 5 0 010 7.072M3 3l18 18" />
+                            </svg>
+                        </div>
+                        Sit with your breath for two minutes
+                    </div>
+                    <div class="support-footer">
+                        When patterns suggest deeper struggle, Kriti gently surfaces optional professional support
+                        resources. You're never alone — and you're never forced.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(196,149,74,0.45)"
+                stroke-width="1.2">
+                <path
+                    d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5 5.2 3.5 6 3 7.5C2.5 9 3 10.5 4 11.5C3.5 12.5 3.5 13.8 4.5 14.8C5.5 15.8 7 16 8.5 15.5C9.5 17 11 18 12 18C13 18 14.5 17 15.5 15.5C17 16 18.5 15.8 19.5 14.8C20.5 13.8 20.5 12.5 20 11.5C21 10.5 21.5 9 21 7.5C20.5 6 19 5.2 17.5 5.5C16.5 3.5 14.5 2 12 2Z" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ FEATURES ═══ -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="text-center">
+                <div class="sec-label reveal">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                    </svg>
+                    What You Get
+                </div>
+                <h2 class="sec-title reveal">Everything you need, nothing you don't.</h2>
+                <p class="sec-sub reveal">Built for alignment. Not performance obsession.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feat-card reveal reveal-d1">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                        </svg>
+                    </div>
+                    <h3>AI Domain Classification</h3>
+                    <p>Automatically understands which life area your entry belongs to — no labels needed from you.</p>
+                </div>
+                <div class="feat-card reveal reveal-d2">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg>
+                    </div>
+                    <h3>Sentiment & Effort Detection</h3>
+                    <p>Reads whether your day carried effort, rest, or weight — with empathy, not a score.</p>
+                </div>
+                <div class="feat-card reveal reveal-d3">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Self-Comparison Only</h3>
+                    <p>No leaderboards. Your reference is always yesterday's you — never someone else's highlight.</p>
+                </div>
+                <div class="feat-card reveal reveal-d1">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Burnout Pattern Awareness</h3>
+                    <p>Recognizes depletion before you do. Surfaces it gently. Never shames it.</p>
+                </div>
+                <div class="feat-card reveal reveal-d2">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <h3>Weekly Reflective Summaries</h3>
+                    <p>A gentle end-of-week letter, not a performance report. What you carried. What grew. What rested.
+                    </p>
+                </div>
+                <div class="feat-card reveal reveal-d3">
+                    <div class="feat-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3>Prayas Points</h3>
+                    <p>Effort-based, never performance-based. Points for showing up — not for winning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="30" height="16" viewBox="0 0 40 18" fill="none" stroke="rgba(196,149,74,0.4)"
+                stroke-width="1.2">
+                <path d="M0,9 Q10,2 20,9 Q30,16 40,9" />
+                <circle cx="20" cy="9" r="3" fill="rgba(196,149,74,0.35)" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="sec-label reveal" style="justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                </svg>
+                Our Story
+            </div>
+            <h2 class="reveal">Why we built Kriti.</h2>
+            <p class="reveal">India is ambitious. But ambition without alignment creates anxiety that has no name, no
+                address, no cure inside a productivity app.</p>
+            <p class="reveal">Kriti is designed for Indian stress — not generic global burnout. We use AI to reduce
+                pressure, not increase productivity obsession. The garden grows with you, not against you.</p>
+            <p class="reveal">We believe that effort deserves to be seen. That rest is not failure. That the person you
+                were yesterday is the only fair benchmark for the person you are today.</p>
+            <span class="about-highlight reveal">Ancient wisdom. Modern AI. Yours.</span>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding: 0 6%;">
+        <div class="divider-line"></div>
+        <div class="divider-motif">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(196,149,74,0.45)"
+                stroke-width="1.2">
+                <path d="M12 22V12m0 0C9.5 12 7 9.5 7 7c0-2.8 2.2-5 5-5s5 2.2 5 5c0 2.5-2.5 5-5 5z" />
+            </svg>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrap">
+                <div class="text-center">
+                    <div class="sec-label reveal" style="justify-content:center;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        Reach Out
+                    </div>
+                    <h2 class="reveal">Talk to us.</h2>
+                    <p class="reveal" style="color:var(--ink-soft);margin-bottom:0;">Have thoughts, ideas, or feedback?
+                        We'd love to listen.</p>
+                </div>
+
+                <form class="contact-form reveal reveal-d2" onsubmit="handleSubmit(event)">
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name" required>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="field">
+                        <label>Message</label>
+                        <textarea placeholder="Share your thoughts with us..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-green form-submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+                        </svg>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="footer-logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--sage)">
+                <path
+                    d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2z" />
+            </svg>
+            Kriti
+        </div>
+        <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+        </ul>
+        <div class="footer-tagline">Ancient wisdom. Modern AI. Replacing comparison with alignment.</div>
+        <div class="footer-copy">© 2025 Kriti · Made with care in India</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
